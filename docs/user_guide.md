@@ -1,18 +1,17 @@
-{{TOCright}}
-= Release Information =
+# Release Information
 This document corresponds the release R4.4
 
-== Previous Releases ==
+## Previous Releases
 
-[http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Augmented_Reality_-_User_and_Programmers_Guide_R3.3 R3.3] Uses ALVAR library.
+[Augmented Reality R3.3 programmer guide](http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Augmented_Reality_-_User_and_Programmers_Guide_R3.3 R3.3). This version uses the ALVAR library.
 
-= Introduction =
+# Introduction
 This document introduces how to use the augmented reality JavaScript API. It gives a description of the API functionality and how it is used to implement augmented reality web applications.
 
-=== Background and Detail ===
-This User and Programmers Guide relates to the Augmented Reality GE which is part of the [[Advanced_Middleware_and_Web_UI_Architecture | Advanced Middleware and Web User Interfaces chapter]]. Please find more information about this Generic Enabler in the related [[FIWARE.OpenSpecification.MiWi.AugmentedReality  | Open Specification]] and [[FIWARE.ArchitectureDescription.MiWi.AugmentedReality | Architecture Description]].
+## Background and Detail
+This User and Programmers Guide relates to the Augmented Reality GE which is part of the [Advanced Web-based UI] chapter. Please find more information about this Generic Enabler in the related [FIWARE Open Specification](https://wiki.fiware.org/FIWARE.OpenSpecification.WebUI.AugmentedReality) and [Architecture Description](https://wiki.fiware.org/FIWARE.ArchitectureDescription.WebUI.AugmentedReality).
 
-= User guide =
+#  User guide
 
 There is no general user interface, because the content and functionality of an AR application varies by implementation, and so does the user interface. User can access AR applications using a web browser, that supports the required features.
 
@@ -23,10 +22,10 @@ File:House.jpg‎ | house
 File:House2.jpg‎ | house
 </gallery>
 
-= Programmers guide =
+# Programmers guide
 This is a guide how to implement Augmented Reality applications using the provided javaScript APIs: Sensor, AR, Scene and Communication, see [[Augmented Reality Open API Specification]].
 
-The API architecture is modular and each API is independent. Therefore, one can use only the APIs needed in a specific application. For example vision based marker tracking application would require AR and Scene APIs, and a location based application, that fetches information from POI Data Provider would require Sensor, Scene, and Communication APIs. Example applications can be found at [https://github.com/Chiru/FIWARE-AugmentedReality/tree/master/demos demos]. The APIs are developed and tested on Firefox Nightly, both on mobile devices, and desktop computers. Hence it's '''highly recommended''' to use '''Mozilla Firefox 25.0a1 or higher'''. The Sensor API may fail to get requested sensor values, usually on desktop and most of the laptop computers as they do not comprise of the necessary sensors, although the browser might support the events.
+The API architecture is modular and each API is independent. Therefore, one can use only the APIs needed in a specific application. For example vision based marker tracking application would require AR and Scene APIs, and a location based application, that fetches information from POI Data Provider would require Sensor, Scene, and Communication APIs. Example applications can be found at [https://github.com/stlemme/FIWARE-AugmentedReality/tree/master/demos]. The APIs are developed and tested on Firefox Nightly, both on mobile devices, and desktop computers. Hence it's '''highly recommended''' to use '''Mozilla Firefox 25.0a1 or higher'''. The Sensor API may fail to get requested sensor values, usually on desktop and most of the laptop computers as they do not comprise of the necessary sensors, although the browser might support the events.
 
 In order to use an API, it's set up in the following way:
 
@@ -103,7 +102,7 @@ File:AndroidLogo128x128.png‎|CustomMarker
 File:TrafficSign128x128.png|CustomMarker
 </gallery>
 
-==Sensor API==
+## Sensor API
 Sensor API is used for creating sensor listeners. The Sensor API is based on the following W3C specifications [http://dev.w3.org/geo/api/spec-source.html Geolocation], [http://dev.w3.org/geo/api/spec-source-orientation.html DeviceOrientation], [http://www.w3.org/TR/ambient-light/ DeviceLight], [https://dvcs.w3.org/hg/dap/raw-file/default/proximity/Overview.html DeviceProximity].
 
 The supported sensor types:
