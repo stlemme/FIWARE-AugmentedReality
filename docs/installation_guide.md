@@ -62,16 +62,10 @@ GPU: Intel HD Graphics 3000, 1,6 GB RAM,
 Operating system: windows 8,
 Browser: Mozilla Firefox 28.0a1
 
-{| style="border-collapse: collapse; border-width: 1px; border-style: solid; border-color: #000"
-|-
-! style="border-style: solid; border-width: 1px"| Device
-! style="border-style: solid; border-width: 1px"| CPU usage
-! style="border-style: solid; border-width: 1px"| Ram usage
-|-
-| style="border-style: solid; border-width: 1px"| HP EliteBook 2760p
-| style="border-style: solid; border-width: 1px"| 38%
-| style="border-style: solid; border-width: 1px"| 200 MB
-|}
+
+|Device|CPU usage|Ram usage|
+|------|---------|---------|
+|HP EliteBook 2760p|38%|200 MB|
 
 ## I/O flows
 N/A
