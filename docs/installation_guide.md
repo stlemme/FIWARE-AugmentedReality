@@ -25,7 +25,7 @@ The Augmented Reality GE has been tested against the following Operating Systems
 The Augmented Reality GE is a collections of JavaScript source files which have to be included in a web application.
 
 Latest version can be cloned from the repository at [https://github.com/stlemme/FIWARE-AugmentedReality](https://github.com/stlemme/FIWARE-AugmentedReality).<br> 
-The repository encloses a demo directory, which contains example applications that show how the needed source files are included. More Detailed information how to use the GE can be found in the [[Augmented Reality - User and Programmers Guide]].
+The repository encloses a demo directory, which contains example applications that show how the needed source files are included. More Detailed information how to use the GE can be found in the [Augmented Reality - User and Programmers Guide](user_guide.md).
 
 # Sanity check procedures
 ## End to End testing
