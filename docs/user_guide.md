@@ -25,19 +25,21 @@ File:House2.jpg‎ | house
 # Programmers guide
 This is a guide how to implement Augmented Reality applications using the provided javaScript APIs: Sensor, AR, Scene and Communication, see [[Augmented Reality Open API Specification]].
 
-The API architecture is modular and each API is independent. Therefore, one can use only the APIs needed in a specific application. For example vision based marker tracking application would require AR and Scene APIs, and a location based application, that fetches information from POI Data Provider would require Sensor, Scene, and Communication APIs. Example applications can be found at [https://github.com/stlemme/FIWARE-AugmentedReality/tree/master/demos]. The APIs are developed and tested on Firefox Nightly, both on mobile devices, and desktop computers. Hence it's '''highly recommended''' to use '''Mozilla Firefox 25.0a1 or higher'''. The Sensor API may fail to get requested sensor values, usually on desktop and most of the laptop computers as they do not comprise of the necessary sensors, although the browser might support the events.
+The API architecture is modular and each API is independent. Therefore, one can use only the APIs needed in a specific application. For example vision based marker tracking application would require AR and Scene APIs, and a location based application, that fetches information from POI Data Provider would require Sensor, Scene, and Communication APIs. Example applications can be found at [https://github.com/stlemme/FIWARE-AugmentedReality/tree/master/demos](https://github.com/stlemme/FIWARE-AugmentedReality/tree/master/demos). The APIs are developed and tested on Firefox Nightly, both on mobile devices, and desktop computers. Hence it's '''highly recommended''' to use '''Mozilla Firefox 25.0a1 or higher'''. The Sensor API may fail to get requested sensor values, usually on desktop and most of the laptop computers as they do not comprise of the necessary sensors, although the browser might support the events.
 
 In order to use an API, it's set up in the following way:
-
+<pre>
  AR.start();
  //Create only the APIs needed in your application.
  var sensorManager = AR.setupSensors();
  var communication = AR.setupConnection();
  var ARManager = AR.setupARManager();
  var sceneManager = AR.setupSceneManager();
+</pre>
 
 If one would use the marker detection AR API, make sure to include the following piece of code inside the xml3d tag into the HTML document.
 
+```
   <data id="MarkerDetector" 
       compute="marker5x5Transforms, customMarkerTransforms, 
       marker5x5Visibilities, customMarkerVisibilities, perspective 
@@ -50,6 +52,7 @@ If one would use the marker detection AR API, make sure to include the following
       <video autoplay="false"></video>
     </texture>
   </data>
+```
 
 Marker5x5, customMarkers parameters are used to initialize the IDs that JSARToolKit tracks from the start, they also defines the maximum size of the marker set.   
 
@@ -103,7 +106,7 @@ File:TrafficSign128x128.png|CustomMarker
 </gallery>
 
 ## Sensor API
-Sensor API is used for creating sensor listeners. The Sensor API is based on the following W3C specifications [http://dev.w3.org/geo/api/spec-source.html Geolocation], [http://dev.w3.org/geo/api/spec-source-orientation.html DeviceOrientation], [http://www.w3.org/TR/ambient-light/ DeviceLight], [https://dvcs.w3.org/hg/dap/raw-file/default/proximity/Overview.html DeviceProximity].
+Sensor API is used for creating sensor listeners. The Sensor API is based on the following W3C specifications [Geolocation](http://dev.w3.org/geo/api/spec-source.html) , [DeviceOrientation](http://dev.w3.org/geo/api/spec-source-orientation.html), [DeviceLight](http://www.w3.org/TR/ambient-light/), [DeviceProximity](https://dvcs.w3.org/hg/dap/raw-file/default/proximity/Overview.html).
 
 The supported sensor types:
  '''SensorType'''
@@ -122,8 +125,10 @@ The supported sensor types:
 :Returns sensor listener for the given sensor type.
 
 :'''''For example: listen device orientation and use it to rotate the virtual camera.'''''
+```
   orientationListener = sensorManager.listenSensor('orientation');
   orientationListener.addAction(sceneManager.setCameraOrientation);
+```
 
 *hasGPS()
 :Returns true if the device has a GPS sensor.
@@ -131,7 +136,10 @@ The supported sensor types:
 *getCurrentPosition(successCallback, errorCallback, options)
 :Attaches the given callback functions to "one-shot" position request. Uses the HTML5 Geolocation API getCurrentPosition() method to get the device's position.
 :'''''For example: Get POIs nearby. The getPois function is defined at the example for queryData function in Communication API'''''
+
+```
  sensorManager.getCurrentPosition(getPOIs);
+```
 
 *watchPosition(successCallback, errorCallback, options)
 :Attaches the given success callback function to updated position as the device moves. Uses the HTML5 Geolocation API getCurrentPosition() method to get the device's position updates.
@@ -143,7 +151,7 @@ AR API is used for registering and tracking markers.
 :Sets a callback function for detected markers, the function has six input parameters callBackFunction(Marker5x5Transforms, customMarkerTransforms, Marker5x5Visibilities, customMarkerVisibilities).
 
 ==Scene API==
-Scene API is used for manipulating the elements in a xml3d scene. The actual xml3d scene can be defined in the web page using tags such as, mesh, group, transform, view, shader, etc. More information about how to use the xml3d can be found here: [[XML3D Open API Specification]]
+Scene API is used for manipulating the elements in a xml3d scene. The actual xml3d scene can be defined in the web page using tags such as, mesh, group, transform, view, shader, etc. More information about how to use the xml3d can be found here: [XML3D Open API Specification](http://wiki.fiware.org/FIWARE.OpenSpecification.WebUI.3D-UI)
 
 *setPositionFromGeoLocation(curLoc, elemLoc, xml3dElement, minDistance, maxDistance)
 :Positions the given xml3dElement(virtual object) into the virtual scene by using the given parameters: curLoc is the current gps location of the device, elemLoc is the gps location of the xml3dElement, and the calculated distance is clamped between minDistance and maxDistance.
@@ -185,16 +193,17 @@ Scene API is used for manipulating the elements in a xml3d scene. The actual xml
 *getDistance(gpsPoint1, gpsPoint2)
 :Returns the distance(meters) and bearing(radians) between the given gps coordinates.
 
-==Communication API==
+## Communication API 
 Communication API is used for handling the basic communication with remote services(Other GEs). 
 *addRemoteService(serviceName, sourceURL)
 :Adds a new remote service with the given service name and url. Remote service, such as POI Data Provider, must provide a RESTful API for communication.
 :'''''For example: Add a POI Data Provider.'''''
- communication.addRemoteService("POI_Data_Provider", "http://someUrl");
+ ```communication.addRemoteService("POI_Data_Provider", "http://someUrl");```
 
 *queryData(serviceName, restOptions, successCallback, errorCallback)
 :Builds the REST query based on the given REST options and sends XMLHttpRequest to the given remote service. If the query is successful, the success callback function will handle the remote service's response message.
 :'''''For example: Query data from the POI Data Provider, added earlier.'''''
+```
  function getPOIs(gpsCoordinates) 
      var restOptions = {
          'function' : "radial_search",
@@ -205,7 +214,7 @@ Communication API is used for handling the basic communication with remote servi
      }
      communication.queryData("POI_Data_Provider", restOptions, handlePoi, null);
  }
-
+```
 *sendData(serviceName, message, succesCallback, errorCallback)
 :Sends the given message to the given remote service.
 
