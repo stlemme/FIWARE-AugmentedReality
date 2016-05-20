@@ -31,10 +31,10 @@ The repository encloses a demo directory, which contains example applications th
 ## End to End testing
 One can test Augmented Reality GE by opening any of the demo or/and test files from the cloned repository, with Mozilla Firefox web browser. Just navigate to the directory where the repository is cloned and start a web server (e.g ''python SimpleHTTPServer'', or ''node.js http-server''). After that, open Firefox browser and navigate to the address where the server is running (e.g. localhost:8000 if it is running on the same device) and click either the Demos or Tests folder. It is recommended to try demos first.    
 
-'''Demos'''<br>
+__Demos__<br>
 The demo folder includes four demos in subfolders ''AR_POI'', ''house'', ''markerDetection'' and ''plane''. Each subfolder has an index.xhtml file, which starts the demo.
 
-'''Tests'''<br>
+__Tests__<br>
 The tests folder includes two test suit files, ''Location_based_regAndTrack_unitTest.html'' and ''Vision_based_regAndTrack_unitTest.html''.
 
 ## List of Running Processes
