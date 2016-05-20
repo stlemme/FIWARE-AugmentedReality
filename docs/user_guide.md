@@ -3,7 +3,7 @@ This document corresponds the release R4.4
 
 ## Previous Releases
 
-[Augmented Reality R3.3 programmer guide](http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Augmented_Reality_-_User_and_Programmers_Guide_R3.3 R3.3). This version uses the ALVAR library.
+[Augmented Reality R3.3 programmer guide](http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/Augmented_Reality_-_User_and_Programmers_Guide_R3.3). This version uses the ALVAR library.
 
 # Introduction
 This document introduces how to use the augmented reality JavaScript API. It gives a description of the API functionality and how it is used to implement augmented reality web applications.
