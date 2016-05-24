@@ -126,8 +126,8 @@ The supported sensor types:
  sensorManager.getCurrentPosition(getPOIs);
 ```
 
-*watchPosition(successCallback, errorCallback, options)
-:Attaches the given success callback function to updated position as the device moves. Uses the HTML5 Geolocation API getCurrentPosition() method to get the device's position updates.
+* ``watchPosition(successCallback, errorCallback, options)``
+:Attaches the given success callback function to updated position as the device moves. Uses the HTML5 Geolocation API ``getCurrentPosition()`` method to get the device's position updates.
 
 ## AR API
 AR API is used for registering and tracking markers.
