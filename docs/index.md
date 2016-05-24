@@ -1,3 +1,7 @@
+[![License badge](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://opensource.org/licenses/LGPL-3.0)
+[![Documentation badge](https://readthedocs.org/projects/fiware-augmentedreality/badge/?version=latest)](http://fiware-augmentedreality.readthedocs.org/en/latest/?badge=latest)
+[![Support badge]( https://img.shields.io/badge/support-sof-yellowgreen.svg)](http://stackoverflow.com/questions/tagged/fiware-augmentedreality)
+
 FIWARE-Augmented Reality
 ========================
 
