@@ -115,28 +115,27 @@ The supported sensor types:
    light
    proximity
 
-*getAvailableSensors()
-:Returns an array of available sensor types.
+* ``getAvailableSensors()``
+: Returns an array of available sensor types.
 
-*getSensorListeners()
-:Returns a dictionary of currently active sensor listeners.
+* ``getSensorListeners()``
+: Returns a dictionary of currently active sensor listeners.
 
-*listenSensor(sensorType)
-:Returns sensor listener for the given sensor type.
+* ``listenSensor(sensorType)``
+: Returns sensor listener for the given sensor type.
 
-:'''''For example: listen device orientation and use it to rotate the virtual camera.'''''
+: _For example: listen device orientation and use it to rotate the virtual camera._
 ```
   orientationListener = sensorManager.listenSensor('orientation');
   orientationListener.addAction(sceneManager.setCameraOrientation);
 ```
 
-*hasGPS()
-:Returns true if the device has a GPS sensor.
+* ``hasGPS()``
+: Returns true if the device has a GPS sensor.
 
-*getCurrentPosition(successCallback, errorCallback, options)
-:Attaches the given callback functions to "one-shot" position request. Uses the HTML5 Geolocation API getCurrentPosition() method to get the device's position.
-:'''''For example: Get POIs nearby. The getPois function is defined at the example for queryData function in Communication API'''''
-
+* ``getCurrentPosition(successCallback, errorCallback, options)``
+: Attaches the given callback functions to "one-shot" position request. Uses the HTML5 Geolocation API getCurrentPosition() method to get the device's position.
+  *_For example: Get POIs nearby. The getPois function is defined at the example for queryData function in Communication API_
 ```
  sensorManager.getCurrentPosition(getPOIs);
 ```
@@ -144,65 +143,64 @@ The supported sensor types:
 *watchPosition(successCallback, errorCallback, options)
 :Attaches the given success callback function to updated position as the device moves. Uses the HTML5 Geolocation API getCurrentPosition() method to get the device's position updates.
 
-==AR API==
+## AR API
 AR API is used for registering and tracking markers.
 
-*setMarkerCallback(callback)
+* ``setMarkerCallback(callback)``
 :Sets a callback function for detected markers, the function has six input parameters callBackFunction(Marker5x5Transforms, customMarkerTransforms, Marker5x5Visibilities, customMarkerVisibilities).
 
-==Scene API==
+## Scene API
 Scene API is used for manipulating the elements in a xml3d scene. The actual xml3d scene can be defined in the web page using tags such as, mesh, group, transform, view, shader, etc. More information about how to use the xml3d can be found here: [XML3D Open API Specification](http://wiki.fiware.org/FIWARE.OpenSpecification.WebUI.3D-UI)
 
-*setPositionFromGeoLocation(curLoc, elemLoc, xml3dElement, minDistance, maxDistance)
-:Positions the given xml3dElement(virtual object) into the virtual scene by using the given parameters: curLoc is the current gps location of the device, elemLoc is the gps location of the xml3dElement, and the calculated distance is clamped between minDistance and maxDistance.
+* ``setPositionFromGeoLocation(curLoc, elemLoc, xml3dElement, minDistance, maxDistance)``
+: Positions the given xml3dElement(virtual object) into the virtual scene by using the given parameters: curLoc is the current gps location of the device, elemLoc is the gps location of the xml3dElement, and the calculated distance is clamped between minDistance and maxDistance.
 
-*setCameraOrientation(deviceOrientation)
-:Replaces the existing orientation of the virtual camera with the given device orientation.
+* ``setCameraOrientation(deviceOrientation)``
+: Replaces the existing orientation of the virtual camera with the given device orientation.
 
-*translateCameraFromGps(curLoc, gpsPoint, maxStep)
-:Translates the camera from current gps location to gpsPoint. The translation is discarded if the distance between the current and new location exceeds the maxStep.
+* ``translateCameraFromGps(curLoc, gpsPoint, maxStep)``
+: Translates the camera from current gps location to gpsPoint. The translation is discarded if the distance between the current and new location exceeds the maxStep.
 
-*translateCameraFromMotion(deviceMotion)
-:Translates the camera according to the acceleration from deviceMotion event.
+* ``translateCameraFromMotion(deviceMotion)``
+: Translates the camera according to the acceleration from deviceMotion event.
 
-*setCameraMotionTranslationStepSize(stepSize)
-:The given step size value defines the resolution of the virtual camera movement. 
-:The default value is '''1.0'''.
+* ``setCameraMotionTranslationStepSize(stepSize)``
+: The given step size value defines the resolution of the virtual camera movement. 
+: The default value is _1.0_.
 
-*setCameraDegreesOfFreedom(heave, sway, surge, yaw, pitch, roll)
-:The given Boolean parameters define the freedom of degrees that the virtual camera currently has. 
-::heave: allows virtual camera to move up and down. The default value is '''false'''.
-::sway: allows virtual camera to move left and right. The default value is '''false'''
-::surge: allows virtual camera to move forward and backward. The default value is '''true'''.
-::yaw: allows virtual camera to rotate around y-axis. The default value is '''true'''.
-::pitch: allows virtual camera to rotate around x-axis. The default value is '''true'''.
-::roll: allows virtual camera to rotate around z-axis. The default value is '''false'''.
+* ``setCameraDegreesOfFreedom(heave, sway, surge, yaw, pitch, roll)`` :The given Boolean parameters define the freedom of degrees that the virtual camera currently has. 
+  * heave: allows virtual camera to move up and down. The default value is _false_.
+  * sway: allows virtual camera to move left and right. The default value is _false_.
+  * surge: allows virtual camera to move forward and backward. The default value is _true_.
+  * yaw: allows virtual camera to rotate around y-axis. The default value is _true_.
+  * pitch: allows virtual camera to rotate around x-axis. The default value is _true_.
+  * roll: allows virtual camera to rotate around z-axis. The default value is _false_.
 
-*setTransformFromMarker(markerTransform, xml3dElement, rotateX)
-:Sets the given marker transform to the given xml3dElement. if rotateX is true the given xml3dElement is rotated 90 degrees.
+* ``setTransformFromMarker(markerTransform, xml3dElement, rotateX)``
+: Sets the given marker transform to the given xml3dElement. if rotateX is true the given xml3dElement is rotated 90 degrees.
 
-*setCameraVerticalPlane(degrees)
-:Sets the camera vertical plane into the given input degrees.   
+* ``setCameraVerticalPlane(degrees)``
+: Sets the camera vertical plane into the given input degrees.   
 
-*addObjectToBillboardSet(xml3dElement)
-:Adds the given xml3dElement into a billboard set. Objects that belong to billboard set, are always facing towards the virtual camera. 
+* ``addObjectToBillboardSet(xml3dElement)``
+: Adds the given xml3dElement into a billboard set. Objects that belong to billboard set, are always facing towards the virtual camera. 
 
-*getActiveCamera()
-:Returns the xml3d active view element.
+* ``getActiveCamera()``
+: Returns the xml3d active view element.
 
-*getDistance(gpsPoint1, gpsPoint2)
-:Returns the distance(meters) and bearing(radians) between the given gps coordinates.
+* ``getDistance(gpsPoint1, gpsPoint2)``
+: Returns the distance(meters) and bearing(radians) between the given gps coordinates.
 
 ## Communication API 
 Communication API is used for handling the basic communication with remote services(Other GEs). 
-*addRemoteService(serviceName, sourceURL)
-:Adds a new remote service with the given service name and url. Remote service, such as POI Data Provider, must provide a RESTful API for communication.
-:'''''For example: Add a POI Data Provider.'''''
+* ``addRemoteService(serviceName, sourceURL)``
+: Adds a new remote service with the given service name and url. Remote service, such as POI Data Provider, must provide a RESTful API for communication.
+  * _For example: Add a POI Data Provider._
  ```communication.addRemoteService("POI_Data_Provider", "http://someUrl");```
 
-*queryData(serviceName, restOptions, successCallback, errorCallback)
-:Builds the REST query based on the given REST options and sends XMLHttpRequest to the given remote service. If the query is successful, the success callback function will handle the remote service's response message.
-:'''''For example: Query data from the POI Data Provider, added earlier.'''''
+* ``queryData(serviceName, restOptions, successCallback, errorCallback)``
+: Builds the REST query based on the given REST options and sends XMLHttpRequest to the given remote service. If the query is successful, the success callback function will handle the remote service's response message.
+  * _For example: Query data from the POI Data Provider, added earlier._
 ```
  function getPOIs(gpsCoordinates) 
      var restOptions = {
@@ -215,8 +213,8 @@ Communication API is used for handling the basic communication with remote servi
      communication.queryData("POI_Data_Provider", restOptions, handlePoi, null);
  }
 ```
-*sendData(serviceName, message, succesCallback, errorCallback)
-:Sends the given message to the given remote service.
+* ``sendData(serviceName, message, succesCallback, errorCallback)``
+: Sends the given message to the given remote service.
 
-*listenWebsocket(url)
-:Opens a websocket and connects it to given url.
+* ``listenWebsocket(url)``
+: Opens a websocket and connects it to given url.
