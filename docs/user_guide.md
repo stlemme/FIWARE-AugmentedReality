@@ -15,12 +15,6 @@ This User and Programmers Guide relates to the Augmented Reality GE which is par
 
 There is no general user interface, because the content and functionality of an AR application varies by implementation, and so does the user interface. User can access AR applications using a web browser, that supports the required features.
 
-Here is some example UIs from the demos.
-<gallery mode=packed widths=200px>
-File:POI_AR.png‎ | AR_POI
-File:House.jpg‎ | house
-File:House2.jpg‎ | house
-</gallery>
 
 # Programmers guide
 This is a guide how to implement Augmented Reality applications using the provided javaScript APIs: Sensor, AR, Scene and Communication, see [[Augmented Reality Open API Specification]].
