@@ -17,6 +17,9 @@ For more information, please, visit http://catalogue.fiware.org/ and
 specifically for documentation about Augmented Reality: 
 http://catalogue.fiware.org/enablers/augmented-reality
 
+User and Programmer as well as Installation guides are available at Readthedocs:
+* [FIWARE Augmented Reality Guides](http://fiware-augmentedreality.readthedocs.io)
+
 This GE does not have a web (http, etc.) interface.
 
 Version information
