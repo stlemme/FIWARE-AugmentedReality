@@ -22,14 +22,14 @@ This is a guide how to implement Augmented Reality applications using the provid
 The API architecture is modular and each API is independent. Therefore, one can use only the APIs needed in a specific application. For example vision based marker tracking application would require AR and Scene APIs, and a location based application, that fetches information from POI Data Provider would require Sensor, Scene, and Communication APIs. Example applications can be found at [https://github.com/stlemme/FIWARE-AugmentedReality/tree/master/demos](https://github.com/stlemme/FIWARE-AugmentedReality/tree/master/demos). The APIs are developed and tested on Firefox Nightly, both on mobile devices, and desktop computers. Hence it's '''highly recommended''' to use '''Mozilla Firefox 25.0a1 or higher'''. The Sensor API may fail to get requested sensor values, usually on desktop and most of the laptop computers as they do not comprise of the necessary sensors, although the browser might support the events.
 
 In order to use an API, it's set up in the following way:
-<pre>
+```
  AR.start();
  //Create only the APIs needed in your application.
  var sensorManager = AR.setupSensors();
  var communication = AR.setupConnection();
  var ARManager = AR.setupARManager();
  var sceneManager = AR.setupSceneManager();
-</pre>
+```
 
 If one would use the marker detection AR API, make sure to include the following piece of code inside the xml3d tag into the HTML document.
 
