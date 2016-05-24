@@ -1,3 +1,7 @@
+[![License badge](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://opensource.org/licenses/LGPL-3.0)
+[![Documentation badge](https://readthedocs.org/projects/fiware-augmentedreality/badge/?version=latest)](http://fiware-augmentedreality.readthedocs.org/en/latest/?badge=latest)
+[![Support badge]( https://img.shields.io/badge/support-sof-yellowgreen.svg)](http://stackoverflow.com/questions/tagged/fiware-augmentedreality)
+
 FIWARE-Augmented Reality
 ========================
 
@@ -12,6 +16,9 @@ GEs, like XML3D Technology, POI Data Provider, etc.
 For more information, please, visit http://catalogue.fiware.org/ and
 specifically for documentation about Augmented Reality: 
 http://catalogue.fiware.org/enablers/augmented-reality
+
+User and Programmer as well as Installation guides are available at Readthedocs:
+* [FIWARE Augmented Reality Guides](http://fiware-augmentedreality.readthedocs.io)
 
 This GE does not have a web (http, etc.) interface.
 
