@@ -97,14 +97,6 @@ All input parameters for the detect Xflow operator are optional meaning that the
 
 A tool for preparing customMarkers: http://flash.tarotaro.org/blog/2008/12/14/artoolkit-marker-generator-online-released/
 
-Example of different types of allowed markers:
-<gallery perrow="5">
-File:Marker5x5_1.png|Marker5x5
-File:Bottle.png|CustomMarker
-File:AndroidLogo128x128.png‎|CustomMarker
-File:TrafficSign128x128.png|CustomMarker
-</gallery>
-
 ## Sensor API
 Sensor API is used for creating sensor listeners. The Sensor API is based on the following W3C specifications [Geolocation](http://dev.w3.org/geo/api/spec-source.html) , [DeviceOrientation](http://dev.w3.org/geo/api/spec-source-orientation.html), [DeviceLight](http://www.w3.org/TR/ambient-light/), [DeviceProximity](https://dvcs.w3.org/hg/dap/raw-file/default/proximity/Overview.html).
 
