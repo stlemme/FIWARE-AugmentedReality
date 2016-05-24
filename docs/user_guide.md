@@ -127,7 +127,7 @@ The supported sensor types:
 
 * ``getCurrentPosition(successCallback, errorCallback, options)``
 : Attaches the given callback functions to "one-shot" position request. Uses the HTML5 Geolocation API getCurrentPosition() method to get the device's position.
-  *_For example: Get POIs nearby. The getPois function is defined at the example for queryData function in Communication API_
+  * _For example: Get POIs nearby. The getPois function is defined at the example for queryData function in Communication API_
 ```
  sensorManager.getCurrentPosition(getPOIs);
 ```
