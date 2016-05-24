@@ -179,6 +179,7 @@ Scene API is used for manipulating the elements in a xml3d scene. The actual xml
 
 ## Communication API 
 Communication API is used for handling the basic communication with remote services(Other GEs). 
+
 * ``addRemoteService(serviceName, sourceURL)``
 : Adds a new remote service with the given service name and url. Remote service, such as POI Data Provider, must provide a RESTful API for communication.
   * _For example: Add a POI Data Provider._
