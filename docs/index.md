@@ -5,7 +5,7 @@
 FIWARE-Augmented Reality
 ========================
 
-This project is part of FIWARE http://www.fiware.org/
+This project is part of FIWARE [http://www.fiware.org/](http://www.fiware.org/)
 
 Augmented Reality Generic Enabler is a high-level application programming 
 interface for HTML5 Augmented Reality applications. Required run-time 
@@ -13,11 +13,12 @@ environment is the JavaScript support of a suitable web browser. No plug-ins
 are required. These applications may rely on the functionality of the other 
 GEs, like XML3D Technology, POI Data Provider, etc. 
 
-For more information, please, visit http://catalogue.fiware.org/ and
+For more information, please, visit [http://catalogue.fiware.org/](http://catalogue.fiware.org/) and
 specifically for documentation about Augmented Reality: 
-http://catalogue.fiware.org/enablers/augmented-reality
+[http://catalogue.fiware.org/enablers/augmented-reality](http://catalogue.fiware.org/enablers/augmented-reality)
 
 User and Programmer as well as Installation guides are available at Readthedocs:
+
 * [FIWARE Augmented Reality Guides](http://fiware-augmentedreality.readthedocs.io)
 
 This GE does not have a web (http, etc.) interface.
